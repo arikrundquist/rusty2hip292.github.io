@@ -10,7 +10,13 @@
 	frame.src = document.location.search.substring(1);
     alert(frame.src);
 	setInterval(() => {
-      alert("here");
+      var inner = frame.contentWindow.document;
+	  alert(inner);
+	  var inner_frame = document.getElementsByTagName("iframe");
+	  alert(inner_frame);
+	  if(inner_frame.length > 0) {
+		alert(inner_frame[0]);
+	  }
     }, 200);
   }
   alert("exited");
