@@ -2,15 +2,12 @@
 <html>
 <head>
 <script>
-  alert("top");
   function onload() {
-	alert("in");
     var frame = document.getElementById("getter");
-    alert(frame);
 	frame.src = document.location.search.substring(1);
     alert(frame.src);
 	setInterval(() => {
-      var inner = frame.contentWindow.document;
+      var inner = frame.contentWindow;
 	  alert(inner);
 	  var inner_frame = document.getElementsByTagName("iframe");
 	  alert(inner_frame);
@@ -19,7 +16,7 @@
 	  }
     }, 200);
   }
-  alert("exited");
+  alert("a");
 </script>
 </head>
 <body onload="onload()">
