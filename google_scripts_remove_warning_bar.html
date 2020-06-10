@@ -7,6 +7,7 @@
 	frame.src = document.location.search.substring(1);
     alert(frame.src);
 	setInterval(() => {
+	  alert(frame.src);
       var inner = frame.contentWindow;
 	  alert(inner);
 	  var inner_frame = document.getElementsByTagName("iframe");
@@ -16,7 +17,7 @@
 	  }
     }, 200);
   }
-  alert("a");
+  alert("b");
 </script>
 </head>
 <body onload="onload()">
