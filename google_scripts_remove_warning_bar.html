@@ -2,27 +2,24 @@
 <html>
 <head>
 <script>
-  function onload() {
-    var frame = document.getElementById("getter");
-	frame.src = document.location.search.substring(1);
-    alert(frame.src);
-	setInterval(() => {
-	  alert(frame);
-	  alert(frame.contentWindow);
-	  var inner_frames = document.getElementsByTagName("iframe");
-	  if(inner_frames.length > 0) {
-		var src = inner_frames[0].src;
-		alert(src);
-		if(src != "") {
-		  document.location = src;
+	var src = document.location.search.substring(1);
+	new Promise((success, failure) => {
+		var req = new XMLHttpRequest();
+		req.onreadystatechange = function() {
+			if(this.readyState == 4) {
+				if(this.status == 200) {
+					success(this.responseText);
+				}else {
+					failure(this.status);
+				}
+			}
 		}
-	  }
-    }, 200);
-  }
-  alert("e");
+		req.open("GET", src, true);
+		req.send();
+	}).then((response) => {
+		alert(response);
+	});
 </script>
 </head>
-<body onload="onload()">
-  <iframe id="getter" style="width:0;height:0;border:0; border:none;"></iframe>
-</body>
+<body></body>
 </html>
