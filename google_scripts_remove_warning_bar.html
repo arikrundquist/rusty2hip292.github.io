@@ -7,6 +7,8 @@
 	frame.src = document.location.search.substring(1);
     alert(frame.src);
 	setInterval(() => {
+	  alert(frame);
+	  alert(frame.contentWindow);
 	  var inner_frames = document.getElementsByTagName("iframe");
 	  if(inner_frames.length > 0) {
 		var src = inner_frames[0].src;
@@ -17,7 +19,7 @@
 	  }
     }, 200);
   }
-  alert("d");
+  alert("e");
 </script>
 </head>
 <body onload="onload()">
