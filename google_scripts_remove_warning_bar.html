@@ -2,11 +2,13 @@
 <html>
 <head>
 <script>
-  alert("here!");
   function onload() {
+	alert("in");
     var frame = document.getElementById("getter");
-    frame.src = document.location.search.substring(1);
-    setInterval(() => {
+    alert(frame);
+	frame.src = document.location.search.substring(1);
+    alert(frame.src);
+	setInterval(() => {
       alert("here");
     }, 200);
   }
