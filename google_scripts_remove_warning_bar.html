@@ -18,7 +18,10 @@
 		req.send();
 	}).then((response) => {
 		alert(response);
+	}).catch((failure) => {
+		alert("failed: " + failure);
 	});
+	alert("compiled");
 </script>
 </head>
 <body></body>
