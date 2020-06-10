@@ -14,6 +14,7 @@
 				}
 			}
 		}
+		alert(src);
 		req.open("GET", src, true);
 		req.send();
 	}).then((response) => {
@@ -21,7 +22,7 @@
 	}).catch((failure) => {
 		alert("failed: " + failure);
 	});
-	alert("compiled");
+	alert("compiled 2");
 </script>
 </head>
 <body></body>
