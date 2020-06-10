@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  function onload() {
+    var frame = document.getElementById("getter");
+    frame.src = document.location.search.substring(1);
+    setInterval(() => {
+      alert("here");
+    }, 200);
+  }
+</script>
+</head>
+<body>
+  <iframe id="getter" style="width:0;height:0;border:0; border:none;" onload="onload()"></iframe>
+</body>
+</html>
