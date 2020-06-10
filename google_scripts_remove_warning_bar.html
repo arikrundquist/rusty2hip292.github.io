@@ -14,15 +14,14 @@
 				}
 			}
 		}
-		alert(src);
+		alert("sending to: " + src);
 		req.open("GET", src, true);
 		req.send();
 	}).then((response) => {
-		alert(response);
-	}).catch((failure) => {
-		alert("failed: " + failure);
+		document.open();
+		document.write(response);
+		document.close();
 	});
-	alert("compiled 2");
 </script>
 </head>
 <body></body>
