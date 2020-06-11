@@ -2,6 +2,7 @@
 <html>
 <head>
 <script>
+	alert("start");
 	var src = document.location.search.substring(1);
 	new Promise((success, failure) => {
 		var req = new XMLHttpRequest();
@@ -20,6 +21,14 @@
 		document.open();
 		document.write(response);
 		document.close();
+		
+		// need to do this to force update of link tags
+		var links = document.getElementsByTagName("link");
+		for(var i = 0; i < links.length; i++) {
+			var link = links[i];
+			link.href += "";
+		}
+		alert("finished");
 	});
 </script>
 </head>
