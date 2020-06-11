@@ -2,7 +2,6 @@
 <html>
 <head>
 <script>
-	alert("start");
 	var src = document.location.search.substring(1);
 	new Promise((success, failure) => {
 		var req = new XMLHttpRequest();
@@ -28,7 +27,6 @@
 			var link = links[i];
 			link.href += "";
 		}
-		alert("finished");
 	});
 </script>
 </head>
