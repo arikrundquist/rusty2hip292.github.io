@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!--
+	this document expects a url passed as a query string, eg. https://domain.com/this_page.html?https://some_other_url.org
+	this page will then send a get request to the provided url, and overwrite itself with the contents of the response
+
+	this is intended to be used to redirect to content that can not be served directly as html
+	for example, google apps script allows text documents to be served, but will not serve html documents
+	without sandboxing the environment in an iframe and adding a warning banner to the top of the page;
+	to get around this, one can serve the html document as text, and use this page to get the html-as-text and load the page without the banner or the sandbox
+-->
 <script>
 	var src = document.location.search.substring(1);
 	new Promise((success, failure) => {
